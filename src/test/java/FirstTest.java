@@ -10,8 +10,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class FirstTest {
-    WebDriver browser;
 
+    //WebDriver browser;
     //@BeforeMethod
     //public void setup() {}
 
