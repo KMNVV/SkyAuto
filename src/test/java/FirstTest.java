@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -10,6 +11,11 @@ public class FirstTest {
 
     @Test
     public void correctLogin() {
+
+        //Chrome options (не забыть вписать (options) в ChromeDriver())
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized"); //полноэкранный
+        options.addArguments("headless"); //тесты без открытия браузера
 
        //open browser
         WebDriver browser = new ChromeDriver();
