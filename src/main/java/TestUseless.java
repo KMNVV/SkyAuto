@@ -2,7 +2,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class FTmj1 {
+public class TestUseless {
     //КРАТНО 3, ВОЗВРАЩАТЬ "Т"
     //КРАТНО 5, ВОЗВРАЩАТЬ "М"
     //КРАТНО 3 И 5, ВОЗВРАЩАТЬ "S"
