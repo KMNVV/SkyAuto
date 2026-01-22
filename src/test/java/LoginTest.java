@@ -41,7 +41,8 @@ public class LoginTest {
         browser.findElement(By.xpath("//*[@data-test='login-button']")) .click();
 
         //boolean check
-        boolean titleisDisplayed = browser.findElement(By.xpath("//span[@data-test='title']")) .isDisplayed();
+        boolean titleisDisplayed = browser.findElement(By.xpath("//span[@data-test='title']"))
+                .isDisplayed();
         assertTrue(titleisDisplayed, "Заголовок не виден");
 
         //textCheck
@@ -64,11 +65,13 @@ public class LoginTest {
         browser.findElement(By.xpath("//*[@id='password']")) .sendKeys("secret_sauce");
         browser.findElement(By.xpath("//*[@data-test='login-button']")) .click();
 
-        boolean errorisDisplayed = browser.findElement(By.xpath("//*[@data-test='error']")) .isDisplayed();
+        boolean errorisDisplayed = browser.findElement(By.xpath("//*[@data-test='error']")) .
+                isDisplayed();
         assertTrue(errorisDisplayed, "Нет Ошибки");
 
         String errorMessage = browser.findElement(By.xpath("//*[@data-test='error']")) .getText();
-        assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out.", "incorrect error text");
+        assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out.",
+                "incorrect error text");
 
         browser.quit();
     }
