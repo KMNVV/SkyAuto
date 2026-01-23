@@ -70,6 +70,5 @@ public class LoginTest extends BaseTest{
         driver.quit();
     }
 
-
 }
 
