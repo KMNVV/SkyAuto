@@ -18,15 +18,16 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String user, String password) {
-        driver.findElement(loginInput) .sendKeys(user);
-        driver.findElement(passwordInput) .sendKeys(password);
-        driver.findElement(loginButton) .click();
+        driver.findElement(loginInput).sendKeys(user);
+        driver.findElement(passwordInput).sendKeys(password);
+        driver.findElement(loginButton).click();
     }
+
     public boolean isErrorDisplayed() {
         return driver.findElement(errorMsg).isDisplayed();
     }
+
     public String getErrorText() {
         return driver.findElement(errorMsg).getText();
     }
-
 }
