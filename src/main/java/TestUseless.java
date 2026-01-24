@@ -19,7 +19,6 @@ public class TestUseless {
             return "T";
         }
         else return "Fail";
-
     }
 
     @Test
@@ -39,5 +38,4 @@ public class TestUseless {
         String actualResult = trialCode(15);
         assertEquals(actualResult, "S");
     }
-
 }

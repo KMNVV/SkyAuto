@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductsPage extends BasePage{
+public class ProductsPage extends BasePage {
     WebDriver driver;
-    private  final By title = By.xpath("//span[@data-test='title']");
+    private final By title = By.xpath("//span[@data-test='title']");
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -18,5 +18,4 @@ public class ProductsPage extends BasePage{
     public String isTextDisplayed() {
         return driver.findElement(title).getText();
     }
-
 }

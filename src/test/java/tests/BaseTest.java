@@ -9,9 +9,9 @@ import pages.LoginPage;
 import pages.ProductsPage;
 
 public class BaseTest {
-   public WebDriver driver;
-   LoginPage loginPage;
-   ProductsPage productsPage;
+    public WebDriver driver;
+    LoginPage loginPage;
+    ProductsPage productsPage;
 
     @BeforeMethod
     public void setup() {
@@ -27,10 +27,8 @@ public class BaseTest {
         productsPage = new ProductsPage(driver);
     }
 
-
     @AfterMethod
-    public void closeBrowser(){
+    public void closeBrowser() {
         driver.quit();
     }
-
 }

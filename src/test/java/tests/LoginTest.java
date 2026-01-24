@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
     @Test
     public void correctLogin() {
@@ -16,8 +15,6 @@ public class LoginTest extends BaseTest{
         assertTrue(productsPage.isTitleDisplayed(), "Заголовок не виден");
         assertEquals(productsPage.isTextDisplayed(), "Products", "incorrect " +
                 "title name");
-
-        driver.quit();
     }
 
     @Test
@@ -29,8 +26,6 @@ public class LoginTest extends BaseTest{
         assertEquals(loginPage.getErrorText(), "Epic sadface: Sorry, this user " +
                         "has been locked out.",
                 "incorrect error text");
-
-        driver.quit();
     }
 
     @Test
@@ -41,8 +36,6 @@ public class LoginTest extends BaseTest{
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об Ошибке");
         assertEquals(loginPage.getErrorText(), "Epic sadface: Username is required",
                 "incorrect error text");
-
-        driver.quit();
     }
 
     @Test
@@ -53,8 +46,6 @@ public class LoginTest extends BaseTest{
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об Ошибке");
         assertEquals(loginPage.getErrorText(), "Epic sadface: Password is required",
                 "incorrect error text");
-
-        driver.quit();
     }
 
     @Test
@@ -66,9 +57,5 @@ public class LoginTest extends BaseTest{
         assertEquals(loginPage.getErrorText(), "Epic sadface: Username and password " +
                         "do not match any user in this service",
                 "incorrect error text");
-
-        driver.quit();
     }
-
 }
-
