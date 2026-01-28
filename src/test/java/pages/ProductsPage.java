@@ -26,6 +26,7 @@ public class ProductsPage extends BasePage {
         By addToCart = By.xpath(ADD_TO_CART_PATTERN.formatted(goodsName));
         driver.findElement(addToCart).click();
     }
+
     public String checkCounterValue() {
         return driver.findElement(cartCounter).getText();
     }
