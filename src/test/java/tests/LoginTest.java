@@ -6,6 +6,7 @@ import io.qameta.allure.Story;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import static user.UserFactory.withAdminPermission;
@@ -18,7 +19,7 @@ public class LoginTest extends BaseTest {
         loginPage.login(withAdminPermission());
 
         assertTrue(productsPage.isTitleDisplayed(), "Заголовок не виден");
-        assertEquals(productsPage.isTextDisplayed(), "Products", "incorrect title name");
+        assertEquals(productsPage.isTextDisplayed(), PRODUCTS.getDisplayName(), "incorrect title name");
     }
 
     @DataProvider(name = "negativeCases")

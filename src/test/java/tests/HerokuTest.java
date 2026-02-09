@@ -24,7 +24,7 @@ public class HerokuTest extends BaseTest {
     public void alertCheck() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/context_menu");
         Actions action = new Actions(driver);
-        action.contextClick(driver.findElement(By.id("hot_spot"))).perform();
+        action.contextClick(driver.findElement(By.id("hot-spot"))).perform();
         Thread.sleep(3000);
         Alert alert = driver.switchTo().alert();
         String text = alert.getText();
