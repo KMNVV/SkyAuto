@@ -14,8 +14,9 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void correctLogin() {
-        loginPage.open();
-        loginPage.login(withAdminPermission());
+        loginPage
+                .open()
+                .login(withAdminPermission());
 
         assertTrue(productsPage.isTitleDisplayed(), "Заголовок не виден");
         assertEquals(productsPage.isTextDisplayed(), PRODUCTS.getDisplayName(), "incorrect title name");
@@ -36,8 +37,9 @@ public class LoginTest extends BaseTest {
     @Feature("Проверка расчета скидки")
     @Test(dataProvider = "negativeCases")
     public void incorrectLogin(String user, String password, String errorMsg) {
-        loginPage.open();
-        loginPage.login(user, password);
+        loginPage
+                .open()
+                .login(user, password);
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об Ошибке");
         assertEquals(loginPage.getErrorText(), errorMsg,

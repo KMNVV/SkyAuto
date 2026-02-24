@@ -12,12 +12,14 @@ public class CartTest extends BaseTest {
 
     @Test
     public void checkGoodsAdded() {
-        loginPage.open();
-        loginPage.login(withAdminPermission());
+        loginPage
+                .open()
+                .login(withAdminPermission());
         assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName());
 
-        productsPage.addGoodsToCart(goodsName);
-        productsPage.switchToCart();
+        productsPage
+                .addGoodsToCart(goodsName)
+                .switchToCart();
 
         assertEquals(cartPage.checkTitleName(), CART.getDisplayName());
 
