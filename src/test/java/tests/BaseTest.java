@@ -29,6 +29,15 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("start-maximized");
             options.addArguments("--guest");
+            boolean isCI = "true".equalsIgnoreCase(System.getenv("CI"));
+            boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+            if (isCI || headless) {
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--remote-allow-origins=*");
+            }
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
