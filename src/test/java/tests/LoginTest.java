@@ -1,20 +1,25 @@
 package tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static user.UserFactory.withAdminPermission;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void correctLogin() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage
+                .open()
+                .login(withAdminPermission());
 
         assertTrue(productsPage.isTitleDisplayed(), "Заголовок не виден");
-        assertEquals(productsPage.isTextDisplayed(), "Products", "incorrect title name");
+        assertEquals(productsPage.isTextDisplayed(), PRODUCTS.getDisplayName(), "incorrect title name");
     }
 
     @DataProvider(name = "negativeCases")
@@ -28,10 +33,13 @@ public class LoginTest extends BaseTest {
         };
     }
 
+    @Epic("Тестирование интернет площадки")
+    @Feature("Проверка расчета скидки")
     @Test(dataProvider = "negativeCases")
     public void incorrectLogin(String user, String password, String errorMsg) {
-        loginPage.open();
-        loginPage.login(user, password);
+        loginPage
+                .open()
+                .login(user, password);
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об Ошибке");
         assertEquals(loginPage.getErrorText(), errorMsg,
